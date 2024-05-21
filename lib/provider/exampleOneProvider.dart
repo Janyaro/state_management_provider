@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class ExampleOneProvider with ChangeNotifier {
   double _value = 1.0;
-  double get value => _value;
+  double get getvalue => _value;
 
-  void setValue(double newValue) {
-    _value = newValue;
+  void setSliderValue(double val) {
+    _value = val;
+    notifyListeners();
   }
 }

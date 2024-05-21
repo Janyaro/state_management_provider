@@ -14,14 +14,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => CountProvider(),
-      // providers: [
-      //   ChangeNotifierProvider(
-      //     create: (_) => CountProvider(),
-      //   ),
-      //   ChangeNotifierProvider(create: (_) => ExampleOneProvider())
-      // ],
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => CountProvider(),
+        ),
+        ChangeNotifierProvider(create: (_) => ExampleOneProvider())
+      ],
       child: const MaterialApp(
         home: ExampleOne(),
       ),
