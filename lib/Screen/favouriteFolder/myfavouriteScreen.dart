@@ -1,18 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:state_management/Screen/favouriteFolder/myfavouriteScreen.dart';
 import 'package:state_management/provider/ExampleF.dart';
+import 'package:state_management/provider/practiceProvider.dart';
 
-class FavouriteScreen extends StatefulWidget {
-  const FavouriteScreen({super.key});
+class MyFavourite extends StatefulWidget {
+  const MyFavourite({super.key});
 
   @override
-  State<FavouriteScreen> createState() => _FavouriteScreenState();
+  State<MyFavourite> createState() => _MyFavouriteState();
 }
 
-class _FavouriteScreenState extends State<FavouriteScreen> {
+class _MyFavouriteState extends State<MyFavourite> {
   @override
   Widget build(BuildContext context) {
     final provide = Provider.of<FavouriteProvider>(context, listen: false);
@@ -50,7 +48,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
           children: [
             Expanded(
               child: ListView.builder(
-                  itemCount: 100,
+                  itemCount: provide.selectedListItem.length,
                   itemBuilder: (context, index) {
                     return Consumer<FavouriteProvider>(
                         builder: (context, value, child) {
