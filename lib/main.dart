@@ -4,6 +4,7 @@ import 'package:state_management/Screen/darkTheme.dart';
 import 'package:state_management/Screen/exampleOne.dart';
 import 'package:state_management/Screen/favouriteFolder/favouriteScreen.dart';
 import 'package:state_management/Screen/practiceClass.dart';
+import 'package:state_management/Screen/value_change_notifier.dart';
 import 'package:state_management/provider/ExampleF.dart';
 import 'package:state_management/provider/countprovider.dart';
 import 'package:provider/provider.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
                   appBarTheme: AppBarTheme(backgroundColor: Colors.green),
                   iconTheme: IconThemeData(color: Colors.pink)),
               debugShowCheckedModeBanner: false,
-              home: DarkThemeScreen());
+              home: Change_Notifier_Screen());
         }));
   }
 }
