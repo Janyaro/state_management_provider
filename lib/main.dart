@@ -3,9 +3,11 @@ import 'package:state_management/Screen/CountProviderExample.dart';
 import 'package:state_management/Screen/darkTheme.dart';
 import 'package:state_management/Screen/exampleOne.dart';
 import 'package:state_management/Screen/favouriteFolder/favouriteScreen.dart';
+import 'package:state_management/Screen/login.dart';
 import 'package:state_management/Screen/practiceClass.dart';
 import 'package:state_management/Screen/value_change_notifier.dart';
 import 'package:state_management/provider/ExampleF.dart';
+import 'package:state_management/provider/auth_provider.dart';
 import 'package:state_management/provider/countprovider.dart';
 import 'package:provider/provider.dart';
 import 'package:state_management/provider/exampleOneProvider.dart';
@@ -27,7 +29,8 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
           ChangeNotifierProvider(create: (_) => FavouriteProvider()),
           ChangeNotifierProvider(create: (_) => Help_provider()),
-          ChangeNotifierProvider(create: (_) => ThemeChanger())
+          ChangeNotifierProvider(create: (_) => ThemeChanger()),
+          ChangeNotifierProvider(create: (_) => Auth_Provider())
         ],
         child: Builder(builder: (BuildContext context) {
           final themechanger = Provider.of<ThemeChanger>(context);
@@ -40,7 +43,7 @@ class MyApp extends StatelessWidget {
                   appBarTheme: AppBarTheme(backgroundColor: Colors.green),
                   iconTheme: IconThemeData(color: Colors.pink)),
               debugShowCheckedModeBanner: false,
-              home: Change_Notifier_Screen());
+              home: LoginScreen());
         }));
   }
 }
